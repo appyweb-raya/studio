@@ -1,11 +1,10 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import { blogPosts } from '@/lib/data';
 import { getImageData } from '@/lib/placeholder-images';
 
 /**
- * Static params for GitHub Pages export
+ * Required for static export (GitHub Pages)
  */
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -14,32 +13,12 @@ export async function generateStaticParams() {
 }
 
 /**
- * Metadata (Next.js 15 expects params as Promise)
+ * DO NOT type params here (Next.js 15 bug workaround)
  */
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
-): Promise<Metadata> {
-  const { slug } = await params;
+export default async function BlogPostPage(props: any) {
+  const slug = props.params.slug;
 
   const post = blogPosts.find((p) => p.slug === slug);
-
-  if (!post) {
-    return {};
-  }
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-  };
-}
-
-/**
- * Page component (DO NOT type PageProps in Next 15)
- */
-export default async function BlogPostPage(
-  { params }: { params: { slug: string } }
-) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -70,7 +49,6 @@ export default async function BlogPostPage(
           <Image
             src={postImage.imageUrl}
             alt={post.title}
-            data-ai-hint={postImage.imageHint}
             fill
             className="object-cover"
             priority
