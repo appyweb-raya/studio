@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <svg
+      {/* <svg
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -52,7 +53,16 @@ export function Logo({ className }: { className?: string }) {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      </svg>
+      </svg> */}
+
+      <Image
+        src="/logo.png"
+        alt="AppyWeb Logo"
+        width={62}
+        height={42}
+        className="object-contain"
+        priority
+      />
       <span className="font-headline font-bold text-xl tracking-tight">
         AppyWeb
       </span>
