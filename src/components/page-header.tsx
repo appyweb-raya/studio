@@ -3,22 +3,25 @@ import Image from "next/image";
 type PageHeaderProps = {
   title: string;
   subtitle: string;
-  imageId: string;
+  imageId?: string;     // for Picsum (default)
+  imageSrc?: string;    // for custom image (override)
 };
 
-export function PageHeader({ title, subtitle, imageId }: PageHeaderProps) {
-  const { imageUrl, description, imageHint } = {
-    imageUrl: `https://picsum.photos/seed/${imageId}/1600/500`,
-    description: `Header for ${title}`,
-    imageHint: "abstract background"
-  };
+export function PageHeader({
+  title,
+  subtitle,
+  imageId,
+  imageSrc,
+}: PageHeaderProps) {
+  const finalImageSrc =
+    imageSrc ??
+    `https://picsum.photos/seed/${imageId ?? title}/1600/500`;
 
   return (
     <section className="relative h-[40vh] min-h-[300px] w-full flex items-center justify-center text-center text-white">
       <Image
-        src={imageUrl}
-        alt={description}
-        data-ai-hint={imageHint}
+        src={finalImageSrc}
+        alt={`Header for ${title}`}
         fill
         className="object-cover"
         priority

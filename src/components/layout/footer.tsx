@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 import { Logo } from "@/components/icons/logo";
 import { navLinks } from "@/lib/data";
 
 export function Footer() {
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/share/1ATAcnN7n5/", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/appyweb.raya", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/appyweb?", label: "LinkedIn" },
   ];
 
   return (

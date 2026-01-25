@@ -8,6 +8,7 @@ export const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About Us' },
   { href: '/careers', label: 'Careers' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 // Services
@@ -134,9 +135,9 @@ export type Testimonial = {
 };
 
 export const testimonials: Testimonial[] = [
-    { quote: "AppyWeb Solutions transformed our vision into a reality. Their team is professional, skilled, and incredibly responsive.", name: "Jane Doe", company: "CEO of Innovate Inc." },
-    { quote: "The new mobile app has significantly boosted our user engagement. The design is fantastic and the performance is flawless.", name: "John Smith", company: "Founder of ConnectCo" },
-    { quote: "Their attention to detail and commitment to quality is second to none. I would highly recommend them to any startup.", name: "Emily White", company: "Marketing Director at Growthify" },
+    { quote: "AppyWeb Solutions transformed our vision into a reality. Their team is professional, skilled, and incredibly responsive.", name: "Jyoti Mishra", company: "CEO of Innovate Inc." },
+    { quote: "The new mobile app has significantly boosted our user engagement. The design is fantastic and the performance is flawless.", name: "Santosh Bhat", company: "Founder of ConnectCo" },
+    { quote: "Their attention to detail and commitment to quality is second to none. I would highly recommend them to any startup.", name: "Puja Sharma", company: "Marketing Director at Growthify" },
 ];
 
 // Blog Posts

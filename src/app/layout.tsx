@@ -7,12 +7,17 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: {
-    default: "AppyWeb Solutions",
-    template: "%s | AppyWeb Solutions",
+    default: "AppyWeb",
+    template: "%s | AppyWeb",
+
   },
   description:
     "We design, build, and scale reliable digital products tailored for startups and growing businesses.",
   keywords: ["software development", "web development", "mobile app development", "ui/ux design", "startups"],
+  icons: {
+    icon: "/logo.png",          // favicon
+    shortcut: "/logo.png",      // optional shortcut icon
+  },
 };
 
 export default function RootLayout({
